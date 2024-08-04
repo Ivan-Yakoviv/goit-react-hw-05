@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
 import css from "./App.module.css";
+import ProductDetails from "./pages/ProductDetails";
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.active);
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/products/:productId" element={<ProductDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
