@@ -5,6 +5,7 @@ import NotFound from "../pages/NotFound";
 import css from "./App.module.css";
 import ProductDetails from "../pages/MovieDetails";
 import AppBar from "./AppBar/AppBar";
+import MovieDetails from "../pages/MovieDetails";
 
 const App = () => {
   return (
@@ -12,8 +13,8 @@ const App = () => {
       <AppBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Movies />} />
-        <Route path="/products/:productId" element={<ProductDetails />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/movies/:movieId" element={<MovieDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

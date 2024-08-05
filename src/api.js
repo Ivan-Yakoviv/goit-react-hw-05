@@ -1,19 +1,12 @@
 import axios from "axios";
 
-const API_KEY = "otTGWoIxQNzliFudXJVId93wApk-ehHVJdDDWbun6I4";
+
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
-axios.defaults.headers.common["Authorization"] = `Client-ID ${API_KEY}`;
+axios.defaults.headers.common["Authorization"] = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YjI1MTVjYzNjNTBjMjBlODRjMTliYjc5ZjJiODE4ZCIsIm5iZiI6MTcyMjc2NjM1MC4wNjYzMjMsInN1YiI6IjY2NThhZGQzZDlmOTE0ZjdkMDY3YzFkMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.biqNrCm2DNpPNz3pJcac6QWomAlPPSsTGAJEbI4xUG4";
 
 
-export const fetchPhotos = async (query,page) => {
-   const response = await axios.get("/search/photos", {
-    params: {
-      query,
-      per_page: 18,
-      page,
-      orientation: "landscape",
-    },
-  });
+export const fetchTrending = async () => {
+   const {data} = await axios.get('/trending/movie/day');
 
-  return response.data;
+  return data;
 };
