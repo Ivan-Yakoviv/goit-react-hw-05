@@ -3,7 +3,7 @@ import Home from "../pages/Home";
 import Movies from "../pages/Movies";
 import NotFound from "../pages/NotFound";
 import css from "./App.module.css";
-import ProductDetails from "../pages/ProductDetails";
+import ProductDetails from "../pages/MovieDetails";
 import AppBar from "./AppBar/AppBar";
 
 const App = () => {
