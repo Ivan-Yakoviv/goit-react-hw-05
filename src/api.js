@@ -10,3 +10,9 @@ export const fetchTrending = async () => {
 
   return data;
 };
+
+export const fetchDetails = async ({id}) => {
+   const {data} = await axios.get(`/movie/${id}`);
+
+  return data;
+};

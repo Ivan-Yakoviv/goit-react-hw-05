@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "../pages/Home";
-import Movies from "../pages/Movies";
+import Home from "../pages/Home/Home";
+import Movies from "../pages/Movies/Movies";
 import NotFound from "../pages/NotFound";
 import css from "./App.module.css";
 import AppBar from "./AppBar/AppBar";
-import MovieDetails from "../pages/MovieDetails";
+import MovieDetails from "../pages/MovieDetails/MovieDetails";
 
 const App = () => {
   return (

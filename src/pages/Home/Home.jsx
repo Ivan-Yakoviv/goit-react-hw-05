@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { fetchTrending } from "../api";
-import MovieList from "../components/MovieList/MovieList";
+import { fetchTrending } from "../../api";
+import MovieList from "../../components/MovieList/MovieList";
 
 const Home = () => {
   const [items, setItems] = useState([]);
