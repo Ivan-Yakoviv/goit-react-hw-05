@@ -3,6 +3,7 @@ import { fetchSearch } from "../../api";
 import { useEffect, useState } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import MovieList from "../../components/MovieList/MovieList";
+import Loader from "../../components/Loader/Loader";
 
 const Movies = () => {
   const [items, setItems] = useState([]);
@@ -46,7 +47,7 @@ const Movies = () => {
   return (
     <div>
       <SearchBar onHandleSubmit={onHandleSubmit} />
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <Loader />}
       {isError && <p>Error fetching data... try again...</p>}
       {query?.length !== 0 && items?.length === 0 && (
         <p>No data available...</p>
