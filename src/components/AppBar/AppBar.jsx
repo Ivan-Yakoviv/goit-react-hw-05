@@ -1,26 +1,26 @@
 import { NavLink } from "react-router-dom";
 import clsx from "clsx";
-import css from "./AppBar.module.css";
+import s from "./AppBar.module.css";
 
 const buildLinkClass = ({ isActive }) => {
-  return clsx(css.link, isActive && css.active);
+  return clsx(s.link, isActive && s.active);
 };
 
 const AppBar = () => {
   return (
-    <header className={css.header}>
-      <p className={css.logo}>
+    <header className={s.header}>
+      <p className={s.logo}>
         <span role="img" aria-label="TV icon">
           💻
         </span>{" "}
         TMDB
       </p>
 
-      <nav className={css.nav}>
+      <nav className={s.nav}>
         <NavLink to="/" className={buildLinkClass}>
           Home
         </NavLink>
-        <NavLink to="/products" className={buildLinkClass}>
+        <NavLink to="/movies" className={buildLinkClass}>
           Movies
         </NavLink>
       </nav>

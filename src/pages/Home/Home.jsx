@@ -1,7 +1,7 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import { fetchTrending } from "../../api";
 import MovieList from "../../components/MovieList/MovieList";
+import Loader from "../../components/Loader/Loader.jsx";
 
 const Home = () => {
   const [items, setItems] = useState([]);
@@ -22,12 +22,12 @@ const Home = () => {
   }, []);
 
   if (items.length < 1 || isLoading) {
-    return <h3>Loading...</h3>;
+    return <Loader />;
   }
   return (
     <div>
       <h2>Trending today</h2>
-      {items.length > 0 ? <MovieList items={items} /> : <p>Loading...</p>}
+      {items.length > 0 ? <MovieList items={items} /> : <Loader />}
     </div>
   );
 };

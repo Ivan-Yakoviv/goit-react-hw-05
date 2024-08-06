@@ -4,6 +4,7 @@ import { fetchDetails } from "../../api";
 import s from "./MovieDetails.module.css";
 import clsx from "clsx";
 import picDef from "../../assets/grey.jpg";
+import Loader from "../../components/Loader/Loader.jsx";
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(s.link, isActive && s.active);
@@ -17,7 +18,6 @@ const MovieDetails = () => {
   const params = useParams();
   const id = params.movieId;
   const location = useLocation();
-  // const previousLocation = location.state ?? "/movies";
   const goBackRef = useRef(location?.state ?? "/movies");
   useEffect(() => {
     const getData = async () => {
@@ -35,7 +35,7 @@ const MovieDetails = () => {
   }, [id]);
 
   if (item.length < 1 && isLoading) {
-    return <h3>loading...</h3>;
+    return <Loader />;
   }
   const { title, poster_path, release_date, overview, vote_average, genres } =
     item;
@@ -80,7 +80,7 @@ const MovieDetails = () => {
         <ul>
           <li>
             <NavLink to="credits" className={buildLinkClass} state={location}>
-              Credits
+              Cast
             </NavLink>
           </li>
           <li>
@@ -89,7 +89,7 @@ const MovieDetails = () => {
             </NavLink>
           </li>
         </ul>
-        <Suspense fallback={<h2>Loading...</h2>}>
+        <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
       </div>

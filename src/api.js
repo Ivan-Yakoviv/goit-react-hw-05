@@ -11,8 +11,30 @@ export const fetchTrending = async () => {
   return data;
 };
 
-export const fetchDetails = async ({id}) => {
+export const fetchDetails = async ({ id }) => {
    const {data} = await axios.get(`/movie/${id}`);
 
+  return data;
+};
+
+export const fetchSearch = async ({ query }) => {
+  const { data } = await axios.get(
+    `/search/movie?query=${query}&include_adult=false&language=en-US&page=1`
+  );
+
+  return data;
+};
+
+export const fetchCredits = async ({ id }) => {
+  const { data } = await axios.get(`/movie/${id}/credits?language=en-US`);
+
+  return data;
+};
+
+export const fetchReviews = async ({ id, page = 1 }) => {
+  const { data } = await axios.get(
+    `/movie/${id}/reviews?language=en-US&page=${page}`
+  );
+  
   return data;
 };

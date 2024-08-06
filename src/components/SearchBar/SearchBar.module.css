@@ -1,20 +1,6 @@
-.header {
-  min-width: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #1b1e38;
-  z-index: 100;
-  border-bottom: 1px solid cornsilk;
-  transform: translateY(0px);
-}
-
 .form {
   display: flex;
+  width: 320px;
   background-color: #454e8b;
   padding: 0 20px;
 }
